@@ -67,6 +67,7 @@ extension WholeDayViewController {
                 AF.request(url, parameters: param).validate().responseDecodable(of: DailyWeatherModel.self) { response in
                     switch response.result {
                     case.success(let result):
+                        var dateString = ""
                         for i in 0...result.list.count-1 {
                             
                             var myDouble = Double(result.list[i].main.temp)
@@ -75,12 +76,13 @@ extension WholeDayViewController {
                             let currentDate = Date()
                             let dateFormatter = DateFormatter()
                             dateFormatter.dateFormat = "yyyy-MM-dd"
-                            let dateString = dateFormatter.string(from: currentDate)
+                            dateString = dateFormatter.string(from: currentDate)
                             
                             if result.list[i].dtTxt.contains(dateString) {
                                 self.listDailyWeather.append(dailyWeather(day: result.list[i].dtTxt,temp: Double(formattedString)!, hum: result.list[i].main.humidity))
                             }
                             
+                            self.titleLabel.text = dateString
                             
                         }
                         self.tableView.reloadData()

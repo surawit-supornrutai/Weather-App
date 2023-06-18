@@ -22,7 +22,6 @@
 		BC4120A529E5887700745864 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4120A429E5887700745864 /* Connection.swift */; };
 		BC4120A729E589DF00745864 /* WholeDayLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4120A629E589DF00745864 /* WholeDayLayout.swift */; };
 		BC4120A929E589F400745864 /* WholeDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4120A829E589F400745864 /* WholeDayViewController.swift */; };
-		BC4120AB29E58ACF00745864 /* Font in Resources */ = {isa = PBXBuildFile; fileRef = BC4120AA29E58ACF00745864 /* Font */; };
 		BC4120AD29E58B5100745864 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4120AC29E58B5100745864 /* UIFontExtension.swift */; };
 		BC4120AF29E58EA100745864 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4120AE29E58EA100745864 /* UIColorExtension.swift */; };
 		BC4120B229E59B7300745864 /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4120B129E59B7300745864 /* CurrentWeatherModel.swift */; };
@@ -71,7 +70,6 @@
 		BC4120A429E5887700745864 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		BC4120A629E589DF00745864 /* WholeDayLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeDayLayout.swift; sourceTree = "<group>"; };
 		BC4120A829E589F400745864 /* WholeDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeDayViewController.swift; sourceTree = "<group>"; };
-		BC4120AA29E58ACF00745864 /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Font; path = ../../../tankoon_partner_ios/TankoonService/Font; sourceTree = "<group>"; };
 		BC4120AC29E58B5100745864 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		BC4120AE29E58EA100745864 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		BC4120B129E59B7300745864 /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				BC41207129E584C500745864 /* Assets.xcassets */,
 				BC41207329E584C500745864 /* LaunchScreen.storyboard */,
 				BC41207629E584C500745864 /* Info.plist */,
-				BC4120AA29E58ACF00745864 /* Font */,
 			);
 			path = OpenWeather;
 			sourceTree = "<group>";
@@ -350,7 +347,6 @@
 				BC41207529E584C500745864 /* LaunchScreen.storyboard in Resources */,
 				BC41207229E584C500745864 /* Assets.xcassets in Resources */,
 				BC41207029E584C300745864 /* Main.storyboard in Resources */,
-				BC4120AB29E58ACF00745864 /* Font in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

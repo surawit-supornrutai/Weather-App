@@ -19,13 +19,13 @@ class ViewController: HomeLayout {
         setUpViewLayout()
         hideKeyboardWhenTappedAroundTableView()
         
-                setupDelegate()
+        setupDelegate()
         
-                submitButton.addTarget(self, action: #selector(pressAcceptButton), for: .touchUpInside)
-                convertButton.addTarget(self, action: #selector(convertTemp), for: .touchUpInside)
-                nextPageButton.addTarget(self, action: #selector(goNextVC), for: .touchUpInside)
+        submitButton.addTarget(self, action: #selector(pressAcceptButton), for: .touchUpInside)
+        convertButton.addTarget(self, action: #selector(convertTemp), for: .touchUpInside)
+        nextPageButton.addTarget(self, action: #selector(goNextVC), for: .touchUpInside)
         
-
+        
     }
     
     func setupDelegate() {
@@ -80,21 +80,26 @@ extension ViewController {
             "appid" : Connection.APIKey
         ] as [String : Any]
         
+        print("xxx param \(param)")
+        
         AF.request(url,parameters: param).validate().responseDecodable(of: CurrentWeatherModel.self) { (response) in
+            print("xxx response \(response)")
             switch response.result {
             case.success(let result):
+                print("xxx result \(result)")
                 if result.cod == 200 {
                     self.titleLable.text = result.name
                     self.tempLabel.text = "Temperature \(result.main.temp) F"
                     self.humidityLabel.text = "Humidity \(result.main.humidity) %"
                     self.cityID = result.id
+                    self.cityTF.resignFirstResponder()
                     self.nextPageButton.enableButtonRegister(btn: self.nextPageButton)
                 } else {
-                    self.showDialog("ไม่พบข้อมูล")
+                    self.showDialog("ไม่พบข้อมูล โปรดค้นหาอีกครั้ง Ex: Bangkok")
                     self.nextPageButton.disableButtonRegister(btn: self.nextPageButton)
                 }
             case .failure(_):
-                self.showDialog("ไม่พบข้อมูล")
+                self.showDialog("ขออภัย server มีปัญหา")
                 self.nextPageButton.disableButtonRegister(btn: self.nextPageButton)
             }
             
@@ -119,8 +124,10 @@ extension ViewController: UITextFieldDelegate {
         
         if !cityTF.text!.isEmpty {
             submitButton.enableButtonRegister(btn: submitButton)
+            nextPageButton.disableButtonRegister(btn: self.nextPageButton)
         } else {
             submitButton.disableButtonRegister(btn: submitButton)
+            nextPageButton.disableButtonRegister(btn: self.nextPageButton)
         }
         
         if !celsiusTF.text!.isEmpty || !fahrenheitTF.text!.isEmpty {

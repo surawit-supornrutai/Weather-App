@@ -69,7 +69,7 @@ class HomeLayout: UIViewController {
     
     let celsiusTF: UITextField = {
         let txf = UITextField()
-        txf.placeholder = "Please fill Temperature"
+        txf.placeholder = "Please fill Temp"
         txf.backgroundColor = .white
         txf.layer.borderWidth = 1
         txf.layer.borderColor = UIColor.black.cgColor
@@ -90,7 +90,7 @@ class HomeLayout: UIViewController {
     
     let fahrenheitTF: UITextField = {
         let txf = UITextField()
-        txf.placeholder = "Please fill Temperature"
+        txf.placeholder = "Please fill Temp"
         txf.backgroundColor = .white
         txf.layer.borderWidth = 1
         txf.layer.borderColor = UIColor.black.cgColor
